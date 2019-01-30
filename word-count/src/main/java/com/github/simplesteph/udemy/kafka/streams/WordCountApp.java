@@ -36,7 +36,7 @@ public class WordCountApp {
                 // 5 - group by key before aggregation
                 .groupByKey()
                 // 6 - count occurrences
-                .count("Counts");
+                .count( "Counts");
 
         // 7 - to in order to write the results back to kafka
         wordCounts.to(Serdes.String(), Serdes.Long(), "word-count-output");

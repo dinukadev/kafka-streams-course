@@ -24,3 +24,13 @@
 --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 
 ```
+
+### Log compaction
+
+```
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic word-count-output --from-beginning \
+--partitions 1 --replication-factor 1 \
+--config cleanup.policy=compact \ 
+--config min.cleanable.dirty.ration=0.005 \
+--config segment.ms=10000
+```
