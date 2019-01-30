@@ -34,3 +34,11 @@
 --config min.cleanable.dirty.ration=0.005 \
 --config segment.ms=10000
 ```
+
+### Producer with key separator
+
+```
+./kafka-console-producer.sh --broker-list localhost:9092 --topic word-count-input \
+--property parse.key=true \
+--property key.separator=,
+```
